@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 // Styles
 
 import "./index.css";
+import "./services/firebase/firebase";
 
 // Components
 
