@@ -1,13 +1,23 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { Navigate, Outlet, createBrowserRouter } from "react-router-dom";
+import { NotFoundPage } from "../pages/NotFoundPage";
 import KanbanOverviewPage from "../features/kanban/pages/KanbanOverviewPage";
 import DndKitKanbanPage from "../features/kanban/pages/DndKitKanbanPage";
 import PragmaticKanbanPage from "../features/kanban/pages/PragmaticKanbanPage";
 import HelloPangeaKanbanPage from "../features/kanban/pages/HelloPangeaKanbanPage";
 
+function RootLayout() {
+  return <Outlet />;
+}
+
 export const router = createBrowserRouter([
   {
     path: "/",
+    element: <RootLayout />,
     children: [
+      {
+        index: true,
+        element: <Navigate to="/kanban" replace />,
+      },
       {
         path: "kanban",
         children: [
@@ -30,5 +40,9 @@ export const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
