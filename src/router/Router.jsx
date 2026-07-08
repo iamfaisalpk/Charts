@@ -1,43 +1,34 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import { NotFoundPage } from "../pages/NotFoundPage";
-import LoginPage from "../features/auth/pages/loginpage";
-import IssuePage from "../features/issues/pages/IssuePage";
-import AddIssuePage from "../features/issues/pages/AddIssuePage";
-import IssueDetailPage from "../features/issues/pages/IssueDetailPage";
+import KanbanOverviewPage from "../features/kanban/pages/KanbanOverviewPage";
+import DndKitKanbanPage from "../features/kanban/pages/DndKitKanbanPage";
+import PragmaticKanbanPage from "../features/kanban/pages/PragmaticKanbanPage";
+import HelloPangeaKanbanPage from "../features/kanban/pages/HelloPangeaKanbanPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     children: [
       {
-        index: true,
-        element: <Navigate to="/issues" replace />,
-      },
-      {
-        path: "issues",
+        path: "kanban",
         children: [
           {
             index: true,
-            element: <IssuePage />,
+            element: <KanbanOverviewPage />,
           },
           {
-            path: "add-issue",
-            element: <AddIssuePage />,
+            path: "dnd-kit",
+            element: <DndKitKanbanPage />,
           },
           {
-            path: ":id",
-            element: <IssueDetailPage />,
+            path: "pragmatic-dnd",
+            element: <PragmaticKanbanPage />,
+          },
+          {
+            path: "hello-pangea",
+            element: <HelloPangeaKanbanPage />,
           },
         ],
       },
     ],
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "*",
-    element: <NotFoundPage />,
   },
 ]);
