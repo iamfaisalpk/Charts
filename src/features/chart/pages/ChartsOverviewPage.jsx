@@ -113,7 +113,7 @@ export default function ChartsOverviewPage() {
   What      → SVG-based, component-driven pole Recharts, pakshe
               oroo chart type-um separate npm package aayi varum.
   Good for  → Out-of-the-box visual polish (motion, corner radius,
-              shape blending) — Chart.js/Recharts-ne apeksha
+              shape blending) — Chart.js/Recharts-ne apekshichitt
               "designed" aayi thonnum. Full custom React tooltip
               (JSX) support.
   Why/Why not → Oroo chart-inum vere package venam (multiple charts
